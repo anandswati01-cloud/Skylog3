@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0c0e14;
+  color: #e8eaf0;
+  font-family: var(--font-dm-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #13161f; }
+::-webkit-scrollbar-thumb { background: #2a2f40; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #353c52; }
+
+@layer components {
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium font-mono;
+  }
+  .badge-green  { @apply bg-[rgba(46,201,138,.12)]  text-sky-green  border border-[rgba(46,201,138,.25)]; }
+  .badge-amber  { @apply bg-[rgba(245,166,35,.12)]  text-sky-amber  border border-[rgba(245,166,35,.25)]; }
+  .badge-red    { @apply bg-[rgba(255,92,92,.12)]   text-sky-red    border border-[rgba(255,92,92,.25)];  }
+  .badge-blue   { @apply bg-[rgba(79,139,255,.12)]  text-accent     border border-[rgba(79,139,255,.25)]; }
+  .badge-purple { @apply bg-[rgba(167,139,250,.12)] text-sky-purple border border-[rgba(167,139,250,.25)]; }
+  .badge-gray   { @apply bg-[rgba(139,145,168,.12)] text-[#8b91a8]  border border-[#2a2f40]; }
+  .badge-teal   { @apply bg-[rgba(34,211,238,.12)]  text-sky-teal   border border-[rgba(34,211,238,.25)]; }
+
+  /* ── Card ── */
+  .card {
+    @apply bg-bg-2 border border-border rounded-xl;
+  }
+  .card-head {
+    @apply flex items-center gap-3 px-5 py-3 border-b border-border flex-wrap;
+  }
+
+  /* ── Button ── */
+  .btn {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+           border border-border-2 bg-bg-3 text-[#8b91a8]
+           hover:bg-bg-4 hover:text-white hover:border-accent
+           transition-all duration-150 cursor-pointer whitespace-nowrap font-body;
+  }
+  .btn-primary {
+    @apply btn bg-accent border-accent text-white hover:bg-accent-2;
+  }
+  .btn-sm {
+    @apply btn px-2.5 py-1 text-[11px];
+  }
+
+  /* ── Progress bar ── */
+  .prog-track {
+    @apply flex-1 h-1 bg-bg-4 rounded-full overflow-hidden;
+  }
+  .prog-fill-green  { @apply h-full bg-sky-green  rounded-full; }
+  .prog-fill-amber  { @apply h-full bg-sky-amber  rounded-full; }
+  .prog-fill-red    { @apply h-full bg-sky-red    rounded-full; }
+  .prog-fill-blue   { @apply h-full bg-accent     rounded-full; }
+
+  /* ── Table ── */
+  .data-table { @apply w-full border-collapse; }
+  .data-table thead th {
+    @apply text-left text-[10px] uppercase tracking-widest text-[#555d78]
+           px-4 py-2.5 border-b border-border font-mono font-normal;
+  }
+  .data-table tbody tr {
+    @apply border-b border-border transition-colors duration-100 last:border-0;
+  }
+  .data-table tbody tr.clickable { @apply cursor-pointer; }
+  .data-table tbody tr.clickable:hover { @apply bg-bg-3; }
+  .data-table tbody td { @apply px-4 py-2.5 text-sm align-middle; }
+
+  /* ── Sortie block ── */
+  .sortie-block {
+    @apply absolute inset-0.5 rounded flex items-center px-1.5
+           text-[9px] font-medium overflow-hidden whitespace-nowrap text-ellipsis;
+  }
+  .sortie-dual     { @apply bg-[rgba(79,139,255,.2)]  text-accent      border-l-2 border-accent; }
+  .sortie-solo     { @apply bg-[rgba(46,201,138,.2)]  text-sky-green   border-l-2 border-sky-green; }
+  .sortie-test     { @apply bg-[rgba(245,166,35,.2)]  text-sky-amber   border-l-2 border-sky-amber; }
+  .sortie-conflict { @apply bg-[rgba(255,92,92,.15)]  text-sky-red     border-l-2 border-sky-red; }
+
+  /* ── Stat card accent strip ── */
+  .stat-strip-blue   { @apply before:absolute before:top-0 before:inset-x-0 before:h-0.5 before:bg-accent; }
+  .stat-strip-green  { @apply before:absolute before:top-0 before:inset-x-0 before:h-0.5 before:bg-sky-green; }
+  .stat-strip-amber  { @apply before:absolute before:top-0 before:inset-x-0 before:h-0.5 before:bg-sky-amber; }
+  .stat-strip-purple { @apply before:absolute before:top-0 before:inset-x-0 before:h-0.5 before:bg-sky-purple; }
+
+  /* ── Stage dot ── */
+  .stage-dot-done    { @apply bg-sky-green  border-sky-green  text-bg text-[8px] font-bold; }
+  .stage-dot-active  { @apply bg-accent     border-accent     text-white text-[8px] font-bold; }
+  .stage-dot-pending { @apply bg-bg-3       border-border     text-[#555d78] text-[8px]; }
+}
