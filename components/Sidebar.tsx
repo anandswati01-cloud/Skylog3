@@ -46,14 +46,18 @@ export default function Sidebar() {
   return (
     <aside className="w-[220px] fixed top-0 left-0 h-screen bg-bg-2 border-r border-border flex flex-col z-50 overflow-y-auto">
 
-      <div className="px-4 py-4 border-b border-border flex items-center gap-3">
-        <img src="/logo.jpg" alt="V1Rotate" width={40} height={40} className="rounded-lg" />
-        <div>
-          <div className="font-head text-base font-bold text-white">V1Rotate</div>
-          <div className="text-[9px] text-[#555d78] tracking-[2px] uppercase font-mono">FTO Management</div>
-        </div>
+      {/* Logo only — no text */}
+      <div className="px-4 py-5 border-b border-border flex items-center justify-center">
+        <img
+          src="/logo.jpg"
+          alt="V1Rotate"
+          width={160}
+          height={60}
+          className="object-contain"
+        />
       </div>
 
+      {/* Nav */}
       <div className="flex-1 py-2">
         {NAV.map(section => (
           <div key={section.label} className="px-3 py-2">
@@ -90,6 +94,7 @@ export default function Sidebar() {
         ))}
       </div>
 
+      {/* School tag */}
       <div className="p-3 border-t border-border">
         <div className="bg-bg-3 border border-border rounded-lg p-3">
           <div className="text-[11px] font-medium">Skyward Aviation Academy</div>
