@@ -46,16 +46,16 @@ export default function Sidebar() {
   return (
     <aside className="w-[220px] fixed top-0 left-0 h-screen bg-bg-2 border-r border-border flex flex-col z-50 overflow-y-auto">
 
-      {/* Logo only — no text */}
-      <div className="px-4 py-5 border-b border-border flex items-center justify-center">
-  <img
-    src="/logo.jpg"
-    alt="V1Rotate"
-    width={160}
-    height={60}
-    className="object-contain"
-  />
-</div>
+      {/* Logo — background matches app theme */}
+      <div className="px-4 py-4 border-b border-border flex items-center justify-center bg-bg-2">
+        <img
+          src="/logo.jpg"
+          alt="V1Rotate"
+          width={130}
+          height={50}
+          className="object-contain mix-blend-lighten"
+        />
+      </div>
 
       {/* Nav */}
       <div className="flex-1 py-2">
@@ -92,17 +92,6 @@ export default function Sidebar() {
             })}
           </div>
         ))}
-      </div>
-
-      {/* School tag */}
-      <div className="p-3 border-t border-border">
-        <div className="bg-bg-3 border border-border rounded-lg p-3">
-          <div className="text-[11px] font-medium">Skyward Aviation Academy</div>
-          <div className="text-[10px] text-[#555d78] font-mono mt-0.5">DGCA/FTO/2019/041 · VOBR</div>
-          <div className="inline-flex items-center gap-1 bg-[rgba(245,166,35,.12)] border border-[rgba(245,166,35,.3)] text-sky-amber text-[9px] px-2 py-0.5 rounded mt-1.5 font-mono tracking-wide">
-            ⬡ RANK: C — Under Review
-          </div>
-        </div>
       </div>
 
     </aside>
