@@ -48,14 +48,14 @@ export default function Sidebar() {
 
       {/* Logo only — no text */}
       <div className="px-4 py-5 border-b border-border flex items-center justify-center">
-        <img
-          src="/logo.jpg"
-          alt="V1Rotate"
-          width={160}
-          height={60}
-          className="object-contain"
-        />
-      </div>
+  <img
+    src="/logo.jpg"
+    alt="V1Rotate"
+    width={160}
+    height={60}
+    className="object-contain"
+  />
+</div>
 
       {/* Nav */}
       <div className="flex-1 py-2">
