@@ -47,9 +47,15 @@ export default function Sidebar() {
   return (
     <aside className="w-[220px] fixed top-0 left-0 h-screen bg-bg-2 border-r border-border flex flex-col z-50 overflow-y-auto">
       {/* Logo */}
-      <div className="px-5 py-5 border-b border-border">
+      <div className="px-4 py-4 border-b border-border flex items-center gap-3">
+  <img src="/logo.jpg" alt="V1Rotate" width={40} height={40} className="rounded-lg" />
+  <div>
+    <div className="font-head text-base font-bold text-white">V1Rotate</div>
+    <div className="text-[9px] text-[#555d78] tracking-[2px] uppercase font-mono">FTO Management</div>
+  </div>
+</div>
         <div className="font-head text-xl font-bold tracking-tight">
-          Sky<span className="text-accent">Log</span>
+          V1 Rotate
         </div>
         <div className="text-[10px] text-[#555d78] tracking-[2px] uppercase mt-1 font-mono">
           FTO Management System
